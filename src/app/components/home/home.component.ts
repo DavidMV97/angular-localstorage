@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Clientes } from 'src/app/models/clientes';
 import { ClientesService } from 'src/app/services/clientes.service';
+import { PedidosService } from 'src/app/services/pedidos.service'; 
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,14 @@ import { ClientesService } from 'src/app/services/clientes.service';
 export class HomeComponent implements OnInit {
   clientes: Array<Clientes> = new Array<Clientes>()
 
-  constructor(public clientesServicio: ClientesService ) { }
+  constructor(public clientesServicio: ClientesService , public pedidosServicio: PedidosService ) { }
 
   ngOnInit(): void {
-    this.clientes = this.clientesServicio.clientesLocalStorage; 
+    this.clientes = this.clientesServicio.clientesLocalStorage;
   }
 
   buscarClientes(event: any){
-    let nombreBuscar:string = event.target.value; 
+    let nombreBuscar:string = event.target.value;
     this.clientes = this.clientesServicio.clientesLocalStorage.filter(cliente=>{
       return cliente.nombre.toLocaleLowerCase().includes(nombreBuscar.toLocaleLowerCase())
     })

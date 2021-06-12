@@ -11,28 +11,31 @@ export class PedidosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let pedido: Pedido = new Pedido(); 
-    pedido.pedidoId = 1; 
-    pedido.clienteId = 1 ; 
-    pedido.nombreCliente = 'David'; 
-    pedido.total = 1500; 
+     /*
+    let pedido: Pedido = new Pedido();
+    pedido.pedidoId = 1;
+    pedido.clienteId = 1 ;
+    pedido.nombreCliente = 'David';
+    pedido.total = 1500;
     pedido.pedidoDetalle.push({
       productoId: 1,
       nombreProducto: 'maiz',
-      cantidad: 5, 
+      cantidad: 5,
       precio: 15,
       total: 5
     },
     {
       productoId: 2,
       nombreProducto: 'frijol',
-      cantidad: 5, 
+      cantidad: 5,
       precio: 15,
       total: 5
     },
-    
     )
-    console.log(pedido); 
+    console.log(pedido);
+
+    */
   }
+
 
 }
